@@ -17,15 +17,8 @@ Journal of the Royal Society Interface. The repository is organized as follows:
 
 * Data *[2]*
 
-  * ./test_case_1: This is a synthetic data set consisting of Action Potential (AP) traces generated with the model by Decker *[2]*.
-  * ./test_case_2: This is a synthetic data set consisting of AP biomarkers generated with the model by Courtemanche *[2]*.
-  * ./test_case_3: This is an experimental data set consisting of AP biomarkers from canine ventricular myocytes.  
-  * ./test_case_4: This is an experimental data set consisting of AP biomarkers from human atrial cardiomyocytes.
+  * 
 
 *[1] For further information about OMM and the time step selection algorithm,
  we refer to the following paper:
  https://hal.archives-ouvertes.fr/hal-01391254*
-
-*[2] For details about AP models and data, we refer to the following paper
- (accepted for publication in the Journal of The Royal Society Interface):
- https://hal.archives-ouvertes.fr/hal-01570828*
