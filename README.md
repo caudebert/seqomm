@@ -17,7 +17,7 @@ Journal of the Royal Society Interface. The repository is organized as follows:
 
 * Data *[2]*
 
-  * 
+  * ./data/demo
 
 *[1] For further information about OMM and the time step selection algorithm,
  we refer to the following paper:
