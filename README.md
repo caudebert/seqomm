@@ -1,14 +1,12 @@
 ### Welcome to our seqomm project !
 
 <p align="center"> 
-<img src="./images/omm.png" title="Is this a log-normal
-distribution?" alt="Front page illustration">
+<img src="./images/seqomm.png" title="what is this?" alt="Front page illustration">
 </p>
 
 ### What is this?
 
-In this repository, you will find the data and codes corresponding to our submission to the
-Journal of the Royal Society Interface. The repository is organized as follows:
+
 
 * Codes *[1]*
 
