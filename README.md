@@ -1,7 +1,8 @@
 ### Welcome to our seqomm project !
 
 <p align="center"> 
-<img src="./images/seqomm.png" title="what is this?" alt="Front page illustration">
+<img src="./images/seqomm.png" title="what is this?" alt="Front page
+illustration" width=auto height="100">
 </p>
 
 ### What is this?
