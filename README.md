@@ -18,8 +18,8 @@ selects the model DOFs where the moments are matched.
 
 The repository is organized as follows:
 
-    * ./data
+ * ./data
     
-    * ./src
-      * ./omm
-      * ./pds
+ * ./src
+  * ./omm
+  * ./pds
