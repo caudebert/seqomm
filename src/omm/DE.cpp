@@ -78,7 +78,7 @@ void DE::initialize(const string& logDir){
   string tmpString;
   vector<string> theWholeFile;
   
-  string fname = logDir + "/DE.in";
+  string fname = logDir + "/OMM.in";
   cout << endl;
   cout << "Opening the input file: " << fname <<endl;
   
@@ -109,18 +109,17 @@ void DE::initialize(const string& logDir){
   m_modelDir      = logDir + "/" + theWholeFile[3]; // Directory of data.bin and collocation.bin
   m_modelName     = "g_"; // Deprecated
   m_momentDir     = logDir + "/" + theWholeFile[4]; // Directory of measurments
-  m_momentName    = theWholeFile[5]; // File prefix for measured moments (e.g. "moment")
+  m_momentName    = "moment"; // File prefix for measured moments (e.g. "moment")
   m_timeStepsDir  = logDir; // Where to get selectedTimeSteps.txt
   m_extension     = ".txt"; // Extension of data files in ascii format
-  m_maxIter       = s2i(theWholeFile[6]); // Maximum number of iterations in the Newton method
+  m_maxIter       = s2i(theWholeFile[5]); // Maximum number of iterations in the Newton method
   m_fileFormat    = "binary"; // Only binary for this release
-  m_volume        = s2d(theWholeFile[7]); // Stochastic volume. Necessary if you want your PDF to integrate to 1.
-  m_tolEta        = s2d(theWholeFile[8]); // Tolerance on the representation error
-  m_alpha         = s2d(theWholeFile[9]); // Tolerance on the pseudo-inverse calculation
+  m_volume        = s2d(theWholeFile[6]); // Stochastic volume. Necessary if you want your PDF to integrate to 1.
+  m_tolEta        = s2d(theWholeFile[7]); // Tolerance on the representation error
+  m_alpha         = s2d(theWholeFile[8]); // Tolerance on the pseudo-inverse calculation
   if (m_fileFormat != "ascii" && m_fileFormat != "binary"){
-    puts("Error: Only ascii and binary files are currently supported. Check your DE.in file.");
+    puts("Error: Only ascii and binary files are currently supported. Check your OMM.in file.");
   }
-  m_user_lambda = true;
   // Initialization completed
   m_isInit = true;
 }

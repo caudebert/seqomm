@@ -35,7 +35,7 @@ int main(int argc, char ** argv) {
   const string caseName = argv[1];  
 
   cout << "Estimating the PDF from your data using the OMM algorithm." << endl;
-  const string dirOfLog = "./" + caseName;
+  const string dirOfLog = "./data/" + caseName;
   
   DE estimation;
   estimation.initialize(dirOfLog);

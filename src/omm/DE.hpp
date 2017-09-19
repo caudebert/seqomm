@@ -73,7 +73,6 @@ protected:
   bool m_isInit;
   double m_tolInv;
   double m_prevRes;
-  bool m_user_lambda;
   double m_volume;
   double m_tolEta;
   double m_alpha;

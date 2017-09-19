@@ -22,8 +22,11 @@ def saveMoment(Gm, m, sd, var_G, dir, correction):
 #-----------------------------
 # LOAD USER-DEFINED PARAMETERS
 #-----------------------------
+border = '#'+'-'*30
 if (len(sys.argv) != 3):
     sys.exit("Missing arguments. There should be two arguments: caseName and mode.")
+else:
+    print '\n'+border+'-'*30, '\n#',' '*20, 'PRE-PROCESSING\n', border+'-'*30
 caseName = sys.argv[1]
 mode = int(sys.argv[2]) # mode=0: simulations only, mode=1: measurements only, mode=2:everything
 dirName = './data/'+caseName
@@ -36,8 +39,10 @@ noiseLevels = sp.array(param.SNRList)
 noiseStds = (8.*sp.exp(0.1*sp.log(10)*noiseLevels))**(-.5)
 noiseNames = ['nn']+[str(int(n)) for n in noiseLevels]
 
+
 # Pre-process simulations
 if (mode==0 or mode==2):
+    print border, '\n# Pre-process simulations \n', border
     os.system('mkdir -pv '+dirName+'/simulations/normalized')
     originalFile = dirName+'/simulations/data.bin'
     normalizedFile = dirName+'/simulations/normalized/data.bin'
@@ -46,9 +51,10 @@ if (mode==0 or mode==2):
     G = (G-a)/(b-a)
     writeLargeBin(normalizedFile, G)
     sp.savetxt(dirName+'/simulations/normalized/normalization.txt', sp.array([a,b]))
-
+    print '  Done.'
 # Pre-process measurements
 if (mode>=1):
+    print border, '\n# Pre-process measurements \n', border
     if (mode==1):
         normFile =dirName+'/simulations/normalized/normalization.txt'
         if (not os.path.isfile(normFile)):
@@ -74,11 +80,14 @@ if (mode>=1):
         os.system('mkdir -pv '+ dir)
         sd = noiseStds[k-1]
         Y = G + sp.random.normal(0.,sd, G.shape)
-        print "  k =", k,': Adding noise with std =',"{:.2e}".format(sd)
+        print "  SNR =", int(noiseLevels[k-1]),'dB: adding noise with std =',"{:.2e}".format(sd)
         Gm = Y.copy()
         var_G = 0.*Gm
         for m in range(0,maxMom):
             if (m>0): Gm*= Y
             if (m==1): var_G = sp.mean(Gm,0) # variance of G for kurtosis correction
             saveMoment(Gm, m, sd, var_G, dir, corr)
-    
+    print '  Done.'
+
+
+print border+'-'*30+'\n'
