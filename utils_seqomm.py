@@ -44,9 +44,10 @@ def loadMeasuredMoments(dirPath, numMom, noiseLevel):
         M.append(sp.loadtxt(fileName))
     return sp.vstack((M))
 
-def loadSimulations(dirPath, N):
-    G = readLargeBin(dirPath+'/data.bin')[:N,:]
+def loadSimulations(dirPath, N, normalized):
     X = readLargeBin(dirPath+'/collocation.bin')[:N,:]
+    if (normalized): dirPath += '/normalized'
+    G = readLargeBin(dirPath+'/data.bin')[:N,:]
     return G, X
 
 def computePowersOfG(G, numMom):

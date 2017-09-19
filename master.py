@@ -17,13 +17,18 @@ import userDefinedParameters as param
 
 
 N = param.numSimulationSamples
-G, X = loadSimulations(dirPath+'/'+param.simDir, N)
+G, X = loadSimulations(dirPath+'/'+param.simDir, N, param.normalizeData)
 dim = X.shape[1]
 numMom = param.numMoments
 measPath = param.measDir+'/noise_'+str(param.noiseLevel)
 vol = param.stochVolume
 #--- Generate OMM.in input file
-generateOMMInput(dim, N, numMom, param.simDir, measPath, param.maxIterOMM, vol, param.alphaTol, param.pseudoInverseTol, dirPath)
+generateOMMInput(dim, N, numMom, param.simDir+param.normalizeData*'/normalized', measPath, param.maxIterOMM, vol, param.alphaTol, param.pseudoInverseTol, dirPath)
+
+
+
+
+
 
 # maxIterGlob = 5
 # maxNx = 10

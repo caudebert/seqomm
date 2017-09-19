@@ -50,6 +50,7 @@ if (mode==0 or mode==2):
     a, b = G.min(), G.max()
     G = (G-a)/(b-a)
     writeLargeBin(normalizedFile, G)
+    os.system('cd '+ dirName+'/simulations/normalized && ln -sf ../collocation.bin . && cd - > /dev/null')
     sp.savetxt(dirName+'/simulations/normalized/normalization.txt', sp.array([a,b]))
     print '  Done.'
 # Pre-process measurements
