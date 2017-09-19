@@ -5,7 +5,7 @@ from utils_seqomm import *
 
 border = '#'+'-'*30
 if (len(sys.argv) != 2):
-    sys.exit("Missing arguments. There should be one arguments: caseName.")
+    sys.exit("Missing arguments. There should be one argument: caseName.")
 else:
     print '\n'+border+'-'*30, '\n#',' '*20, 'SEQOMM\n', border+'-'*30
 caseName = sys.argv[1]

@@ -1,5 +1,6 @@
 import os, sys
 import scipy as sp
+sys.path.append('./src/utils')
 from ioBin import *
 import inspect
 

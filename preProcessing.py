@@ -1,6 +1,6 @@
 import os, sys
-sys.path.append('./src/utils')
 import scipy as sp
+sys.path.append('./src/utils')
 from ioBin import *
 
 
