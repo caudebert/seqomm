@@ -1,5 +1,7 @@
 ### Welcome to our seqomm project !
 
+#### Disclaimer: work in progress, some parts of the code are missing
+
 <p align="center"> 
 <img src="./images/seqomm.png" title="what is this?" alt="Front page
 illustration" width=auto height="300">
