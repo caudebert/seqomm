@@ -46,7 +46,7 @@ compilation in `./compileOMM.sh`
 
 
 ### Try the demo
-```Bash
-toto
-toto
+```console
+python preProcessing.py demo
+python master.py demo
 ```
