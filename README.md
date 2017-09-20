@@ -26,3 +26,21 @@ The repository is organized as follows:
  
    * ./omm
    * ./pds
+
+### What do I need?
+You will need the following tools for the present project:
+    * C++ compile
+    * Python version >= 2.7
+
+You will also need the following external libraries/packages:
+    * Eigen 3: C++ (header-only) library (Eigen 2 might work but hasn't been tested)
+    * GSL/GSLCBLAS: GSL implementation (in C) of BLAS routines (included with most OS X/Linux distributions)
+    * scikit-learn: machine-learning library implemented in Python
+
+### What do I need to do?
+There is not much to do if you want to run the demo. You only need to compile
+the OMM code which is written in C++. We provide a template BASH script for the
+compilation in `./compileOMM.sh`
+
+
+### Try the demo
