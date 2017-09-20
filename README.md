@@ -44,8 +44,10 @@ There is not much to do if you want to run the demo. You only need to compile
 the OMM code which is written in C++. We provide a template BASH script for the
 compilation in `./compileOMM.sh`
 
-
 ### Try the demo
+Make sure you have compiled what needs to be compiled (see the above paragraph).
+Then, execute the following commands in your console:
+
 ```console
 python preProcessing.py demo
 python master.py demo
