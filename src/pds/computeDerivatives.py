@@ -47,7 +47,7 @@ border = '#'+'-'*30
 if (len(sys.argv) != 2):
     sys.exit("Missing arguments. There should be one argument: caseName.")
 else:
-    print '\n'+border+'-'*30, '\n#',' '*15, 'PDS: Physical DOF Selection\n', border+'-'*30
+    print '\n'+border+'-'*30, '\n#',' '*10, 'COMPUTE DERIVATIVES (w.r.t. parameters)\n', border+'-'*30
 caseName = sys.argv[1]
 dirName = './data/'+caseName
 sys.path.append(dirName)
@@ -55,13 +55,14 @@ import userDefinedParameters as param
 nProcs = param.numProcs
 nC = param.numSimulationSamples
 neighbour_regularization = param.neighborReg
-
-
 G, th = loadSimulations(dirName+'/'+param.simDir, nC, param.normalizeData)
-
 dim = th.shape[1]
 tree = KDTree(th)
 nT = G.shape[1]
+
+paramList = [('case name',caseName), ('stoch. dim.', dim), ('nb samples', nC), ('nb phys. DOFs', nT), ('nb procs', nProcs)]
+print printDict(paramList,20)
+
 
 
 colList = list(ito.combinations_with_replacement(range(dim+1),2))
@@ -86,5 +87,6 @@ for d in range(dim):
   print '  Writing to ',fileName
   i = writeLargeBin(fileName,output[:,:,d])
 
-print '\n'
+
 sp.savetxt(saveDir+'/mean_fitting_error.txt',sp.mean(n2Err,1))
+print border+'-'*30+'\n'

@@ -4,6 +4,12 @@ sys.path.append('./src/utils')
 from ioBin import *
 import inspect
 
+def printDict(dict, pad):
+    s = ''
+    for tup in dict:
+        s += ' - '+tup[0].ljust(pad)+': '+str(tup[1])+'\n'
+    return s
+
 def generateOMMInput(dim, N, m, simDir, measDir, maxIter, vol, alpha, tol, dirPath):
     frame = inspect.currentframe()
     args, _, _, values = inspect.getargvalues(frame)
