@@ -49,6 +49,6 @@ Make sure you have compiled what needs to be compiled (see the above paragraph).
 Then, execute the following commands in your console:
 
 ```console
-python preProcessing.py demo
+python preProcessing.py demo 2
 python master.py demo
 ```

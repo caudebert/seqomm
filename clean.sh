@@ -10,16 +10,16 @@ rm -f ./pdf.txt *.out
 rm -fr ./outputs/$1/cache ./outputs/$1/DOFSelection ./outputs/$1/PDFs
 rm -f ./data/$1/OMM.in ./data/$1/selectedDOFs.txt
 
-read -p "Delete also derivatives? (y/n)" -n 1 -r
+read -p "Delete also derivatives? (y/n)" reply
 echo    
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $reply =~ ^[Yy]$ ]]
 then
     rm -fr ./outputs/$1/derivatives
 fi
 
-read -p "Delete also pre-processing? (y/n)" -n 1 -r
+read -p "Delete also pre-processing? (y/n)" reply
 echo    
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $reply =~ ^[Yy]$ ]]
 then
     rm -fr ./data/$1/measurements/noise* ./data/$1/simulations/normalized 
 fi
