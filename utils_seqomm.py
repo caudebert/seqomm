@@ -23,11 +23,11 @@ def generateOMMInput(dim, N, m, simDir, measDir, maxIter, vol, alpha, tol, dirPa
         file.writelines(contents[:-1])
     return 0
 
-def promptForContinuation(dirPath, iterGlob, ask):
-    sgm = checkSGM(dirPath, iterGlob)
+def promptForContinuation(caseName, iterGlob, ask):
+    sgm = checkSGM(caseName, iterGlob)
     if (sgm): return True
     if (not ask):
-        os.system('python ./sgm/activeClustering.py '+dirPath+' '+str(iterGlob))
+        os.system('python ./src/pds/activeClustering.py '+caseName+' '+str(iterGlob))
         return True
     is_valid=0
     while not is_valid:
@@ -37,11 +37,11 @@ def promptForContinuation(dirPath, iterGlob, ask):
     if (boo=="no"):
         print "This was the last global iteration. The program will now stop."
         return False
-    os.system('python ./sgm/activeClustering.py '+dirPath+' '+str(iterGlob))
+    os.system('python ./src/pds/activeClustering.py '+caseName+' '+str(iterGlob))
     return True
 
-def checkSGM(dirPath, iterGlob):
-    fileName = dirPath+'/sgromm/selList_'+str(iterGlob)+'.txt'
+def checkSGM(caseName, iterGlob):
+    fileName = './outputs/'+caseName+'/selList_'+str(iterGlob)+'.txt'
     return os.path.isfile(fileName)
 
 def loadMeasuredMoments(dirPath, numMom, noiseLevel):
@@ -73,13 +73,13 @@ def computeGlobalResidual(Gp, M, rho, vol, N):
     R = appMom - M
     return R
 
-def savePDF(dirPath, iter_glob, rho, X):
+def savePDF(savePath, iter_glob, rho, X):
     pdf = sp.vstack((X.T,rho)).T
-    print pdf.shape
-    fileName = dirPath+'/sgromm/pdf_'+str(iter_glob+1)+'.txt'
+    #print pdf.shape
+    fileName = savePath+'/pdf_'+str(iter_glob+1)+'.txt'
     sp.savetxt(fileName, pdf)
 
-def deleteSelection(dirPath, iter_glob):
+def deleteSelection(caseName, iter_glob):
     if (iter_glob>0):
-        fileName = dirPath+'/sgromm/selList_'+str(iter_glob)+'.txt'
+        fileName = './outputs/'+caseName+'DOFSelection/selList_'+str(iter_glob)+'.txt'
         os.system('rm -fv '+fileName)

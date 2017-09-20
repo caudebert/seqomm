@@ -21,7 +21,7 @@ pseudoInverseTol = 1.e-8
 
 # PDS (physical DOF selection) settings
 numProcs = 4 # Number of procs for parallel computation of the derivatives
-maxClusters = 62 # Maximum number of clusters. Must be <= total number of DOFs
+maxClusters = 10 # Maximum number of clusters. Must be <= total number of DOFs
 traceThreshold = 1.e-2 # Threshold on the SGM (sensitivity Gram matrix) trace
 neighborReg = 2 # Nearest neighbor regularization (positive integer)
 

@@ -110,7 +110,7 @@ void DE::initialize(const string& logDir){
   m_modelName     = "g_"; // Deprecated
   m_momentDir     = logDir + "/" + theWholeFile[4]; // Directory of measurments
   m_momentName    = "moment"; // File prefix for measured moments (e.g. "moment")
-  m_timeStepsDir  = logDir; // Where to get selectedTimeSteps.txt
+  m_timeStepsDir  = logDir; // Where to get selectedDOFs.txt
   m_extension     = ".txt"; // Extension of data files in ascii format
   m_maxIter       = s2i(theWholeFile[5]); // Maximum number of iterations in the Newton method
   m_fileFormat    = "binary"; // Only binary for this release
@@ -186,7 +186,7 @@ void DE::readData(){
     exit(1);
   }
 
-  string tmpFile = m_timeStepsDir + "/selectedTimeSteps.txt";
+  string tmpFile = m_timeStepsDir + "/selectedDOFs.txt";
   ifstream timeFile(tmpFile.c_str());
   if (!timeFile){
     cout << "No file " << tmpFile << " was found. The whole signal will be taken into account.";

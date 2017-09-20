@@ -6,7 +6,7 @@ if (( $# != 1 )); then
 fi
 
 caseName=$1
-rm -f ./pdf.txt
+rm -f ./pdf.txt *.out
 rm -fr ./outputs/$1/cache ./outputs/$1/DOFSelection ./outputs/$1/PDFs
 
 read -p "Delete also derivatives? (y/n)" -n 1 -r
