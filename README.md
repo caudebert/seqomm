@@ -37,7 +37,7 @@ You will also need the following external libraries/packages:
 
    * [Eigen 3](http://eigen.tuxfamily.org/index.php?title=Main_Page#Download): C++ (header-only) library (Eigen 2 might work but hasn't been tested)
    * GSL/GSLCBLAS: GSL implementation (in C) of BLAS routines (included with most OS X/Linux distributions)
-   * [scikit-learn]{http://scikit-learn.org/stable/install.html}: machine-learning library implemented in Python
+   * [scikit-learn](http://scikit-learn.org/stable/install.html): machine-learning library implemented in Python
 
 ### What do I need to do?
 There is not much to do if you want to run the demo. You only need to compile
@@ -46,3 +46,7 @@ compilation in `./compileOMM.sh`
 
 
 ### Try the demo
+```Bash
+toto
+toto
+```
