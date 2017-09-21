@@ -2,7 +2,7 @@
 
 <p align="center"> 
 <img src="./images/seqomm.png" title="what is this?" alt="Front page
-illustration" width=auto height="300">
+illustration" width=auto height="270">
 </p>
 
 ### What is this?
@@ -42,7 +42,7 @@ You will also need the following external libraries/packages:
 ### What do I need to do?
 There is not much to do if you want to run the demo. You only need to compile
 the OMM code which is written in C++. We provide a template BASH script for the
-compilation in `./compileOMM.sh`
+compilation in `./compileOMM.sh`.
 
 ### Try the demo
 Make sure you have compiled what needs to be compiled (see the above paragraph).
