@@ -66,8 +66,8 @@ for iterGlob in range(maxIterGlob):
     finalRho.append(bestRho)
     finalResidual.append(resNormList[iBest])
 
+
+
 #print finalResidual
-S = sp.hstack((sp.array(S),sp.array(finalResidual)))
-
-
-sp.savetxt('summary.out',S)
+#S = sp.hstack((sp.array(S),sp.array(finalResidual)))
+#sp.savetxt('summary.out',S)

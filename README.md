@@ -1,7 +1,5 @@
 ### Welcome to our seqomm project !
 
-#### Disclaimer: work in progress, some parts of the code are missing...
-
 <p align="center"> 
 <img src="./images/seqomm.png" title="what is this?" alt="Front page
 illustration" width=auto height="300">
@@ -20,12 +18,14 @@ selects the model DOFs where the moments are matched.
 
 The repository is organized as follows:
 
- * ./data
+ * `./data`: This where the user data are stored. A demo test case is already
+   there. TO use your own data, read the `README.md` file.
     
- * ./src
+ * `./src`:
  
-   * ./omm
-   * ./pds
+   * `./src/omm`: OMM sources, more info in `README.md` file
+   * `./src/pds`: PDS sources, more info in `README.md` file
+   * `./src/utils`: some utilities (I/O, formatting, ...)
 
 ### What do I need?
 You will need the following tools for the present project:
