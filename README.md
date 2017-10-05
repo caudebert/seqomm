@@ -16,7 +16,7 @@ freedom (DOF) of the model but it may become computationally challenging when
 complex models are considered (say, 3-D PDE model with millions of DOFs).
 To alleviate the computational cost of OMM, we propose an algorithm, referred to as Physical DOF Selection (PDS), that
 selects the model DOFs where the moments are matched.
-All the methods and algorithms are presented in [this preprint](https://hal.archives-ouvertes.fr/hal-01391254)
+All the methods and algorithms are presented in [this preprint](https://hal.archives-ouvertes.fr/hal-01391254).
 
 The repository is organized as follows:
 
@@ -24,7 +24,7 @@ The repository is organized as follows:
    there. TO use your own data, read the `README.md` file.
     
  * `./src`: This is where the different sources are. Some are written in C++,
-   others in Python and the ensenmble is driven by the Python script
+   others in Python and the ensemble is driven by the Python script
    `master.py` in the project root directory.
  
    * `./src/omm`: OMM sources, more info in `README.md` file
